@@ -20,11 +20,10 @@ public class Application {
         // 시도회수 저장
         int trialCount = parseTrialCount(Console.readLine());
 
-        // TODO 2. 게임 실행
+        // TODO 2. 게임 실행 + TODO 3. 최종 우승자 선정
         RacingGame game = new RacingGame(carNames, trialCount);
         game.start();
 
-        // TODO 3. 최종 우승자 선정
 
     }
 
