@@ -8,6 +8,9 @@ import java.util.List;
 public class Application {
     public static void main(String[] args) {
         // TODO: 프로그램 구현
+
+        // TODO 1. input 구현
+        // 자동차 이름 List에 저장
         System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
         String inputNames = Console.readLine();
         // 자동차 이름 List에 저장
@@ -17,6 +20,11 @@ public class Application {
         // 시도회수 저장
         int trialCount = parseTrialCount(Console.readLine());
 
+        // TODO 2. 게임 실행
+        RacingGame game = new RacingGame(carNames, trialCount);
+        game.start();
+
+        // TODO 3. 최종 우승자 선정
 
     }
 
