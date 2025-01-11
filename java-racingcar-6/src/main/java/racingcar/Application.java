@@ -1,10 +1,8 @@
 package racingcar;
 
-import camp.nextstep.edu.missionutils.Console;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class Application {
