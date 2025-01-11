@@ -2,6 +2,7 @@ package racingcar;
 
 import camp.nextstep.edu.missionutils.Randoms;
 import racingcar.domain.Car;
+import racingcar.view.OutputView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,9 +24,8 @@ public class RacingGame {
         System.out.println("실행 결과");
         for (int i = 0; i < trialCount; i++) {
             playOneRound();
-            printProgress();
+            OutputView.printRoundResults(cars);
         }
-        printWinners();
     }
 
     public void playOneRound() {
@@ -35,19 +35,7 @@ public class RacingGame {
         }
     }
 
-    public void printProgress() {
-        for (Car car : cars) {
-            System.out.println(car.displayProgress());
-        }
-        System.out.println(" ");
-    }
-
-    private void printWinners() {
-        List<String> winners = findWinners();
-        System.out.println("최종 우승자 : " + String.join(", ", winners));
-    }
-
-    private List<String> findWinners() {
+    public List<String> findWinners() {
         int maxProgress = cars.stream()
                 .mapToInt(Car::getProgress)
                 .max()
