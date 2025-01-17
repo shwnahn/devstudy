@@ -6,8 +6,8 @@ import lotto.view.InputView;
 import lotto.view.OutputView;
 import camp.nextstep.edu.missionutils.Randoms;
 
-import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class LottoController {
     public void run() {
@@ -21,7 +21,7 @@ public class LottoController {
 //        로또 개수만큼 자동 발행
         List<Lotto> purchasedLottos = new ArrayList<>();
         for (int i = 0; i < lottoAmount; i++) {
-            purchasedLottos.add(new Lotto(Randoms.pickUniqueNumbersInRange(1, 45, 6)).toString());
+            purchasedLottos.add(new Lotto(Randoms.pickUniqueNumbersInRange(1, 45, 6)));
         }
 
 //        3. 발행 내역 출력
@@ -48,12 +48,11 @@ public class LottoController {
 //
     }
 
-    private double calculateProfitRate(List matchCounts) {
+    private double calculateProfitRate(List<Integer> matchCounts) {
         return 0;
     }
 
-    private List checkWinning(List purchasedLottos, WinningLotto winningLotto) {
-        return null;
+    private List<Integer> checkWinning(List<Lotto> purchasedLottos, WinningLotto winningLotto) {
+        return List.of();
     }
-
 }
