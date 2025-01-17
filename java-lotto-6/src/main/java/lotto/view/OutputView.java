@@ -4,14 +4,13 @@ import lotto.model.Lotto;
 
 import java.util.List;
 
-
 public class OutputView {
     public static void printLottoAmount(int lottoAmount) {
-
+        System.out.printf("\n%d개를 구매했습니다.\n", lottoAmount);
     }
 
     public static void printLottoNumbers(List<Lotto> purchasedLottos) {
-
+        purchasedLottos.forEach(lotto -> System.out.println(lotto.getNumbers()));
     }
 
 

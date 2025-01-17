@@ -7,7 +7,12 @@ public class Lotto {
 
     public Lotto(List<Integer> numbers) {
         validate(numbers);
+        sortNumbers(numbers);
         this.numbers = numbers;
+    }
+
+    private void sortNumbers(List<Integer> numbers) {
+        numbers.sort(Integer::compareTo); // 오름차순 정렬
     }
 
     private void validate(List<Integer> numbers) {
