@@ -13,26 +13,30 @@ public class LottoController {
     public void run() {
 //        1. 로또 구입
 //        구입 금액 입력
+        OutputView.askPurchaseInput();
         int purchaseAmount = InputView.readPurchaseAmount();
 //        입력한만큼 로또 구매
         int lottoAmount = purchaseAmount / 1000;
 
 //        2. 로또 발행
-//        로또 개수만큼 자동 발행
         List<Lotto> purchasedLottos = new ArrayList<>();
         for (int i = 0; i < lottoAmount; i++) {
             purchasedLottos.add(new Lotto(Randoms.pickUniqueNumbersInRange(1, 45, 6)));
         }
 
 //        3. 발행 내역 출력
-//        발행한 로또 수량 출력
         OutputView.printLottoAmount(lottoAmount);
-//        발행한 로또 번호 출력
         OutputView.printLottoNumbers(purchasedLottos);
 
 //        4. 당첨 번호 입력
+        OutputView.askWinningInput();
         List<Integer> winningNumbers = InputView.readWinningNumbers();
+        WinningLotto.validate(winningNumbers);
+
+        OutputView.askBonusInput();
         int bonusNumber = InputView.readBonusNumber();
+        WinningLotto.validate(bonusNumber);
+
         WinningLotto winningLotto = new WinningLotto(winningNumbers, bonusNumber);
 
 //        5. 당첨 여부 조회
