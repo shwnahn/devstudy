@@ -1,4 +1,10 @@
 package lotto.model;
 
-public class WinningRank {
+public enum WinningRank {
+    FIRST,
+    SECOND,
+    THIRD,
+    FOURTH,
+    FIFTH,
+    NONE
 }
